@@ -24,7 +24,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Edit the article title for the existing article', async ({ page }) => {
-  await viewArticlePage.clikEditArticleLink();
+  await viewArticlePage.clickEditArticleLink();
   await createArticlePage.assertArticleTitleVisible();
   await page.reload();
   await createArticlePage.fillTitleField(article.title + ' edited');

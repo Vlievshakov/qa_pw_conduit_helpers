@@ -24,7 +24,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Add the tag for the existing article without tags', async ({ page }) => {
-  await viewArticlePage.clikEditArticleLink();
+  await viewArticlePage.clickEditArticleLink();
   await createArticlePage.assertArticleTitleVisible();
   await page.reload();
   await createArticlePage.fillArticleTag('tagone');

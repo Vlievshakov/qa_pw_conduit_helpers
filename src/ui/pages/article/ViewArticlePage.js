@@ -7,7 +7,7 @@ export class ViewArticlePage {
     this.articleEditArticleLink = page
       .getByRole('link', { name: 'Edit Article' })
       .first();
-    this.articleTag = page.locator('li').nth(4);
+    this.articleTag = page.locator('ul.tag-list li');
   }
 
   async assertArticleTitleIsVisible(title) {
@@ -22,7 +22,7 @@ export class ViewArticlePage {
     });
   }
 
-  async clikEditArticleLink() {
+  async clickEditArticleLink() {
     await test.step(`Click the 'Edit Article' link`, async () => {
       await this.articleEditArticleLink.click();
     });

@@ -27,7 +27,7 @@ test.beforeEach(async ({ page }) => {
 test('Remove an article description for the existing article', async ({
   page,
 }) => {
-  await viewArticlePage.clikEditArticleLink();
+  await viewArticlePage.clickEditArticleLink();
   await createArticlePage.assertArticleTitleVisible();
   await page.reload();
   await createArticlePage.fillDescriptionField('');

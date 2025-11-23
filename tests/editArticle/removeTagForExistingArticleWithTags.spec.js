@@ -26,7 +26,7 @@ test.beforeEach(async ({ page }) => {
 test('Remove an article tag for the existing article with tag', async ({
   page,
 }) => {
-  await viewArticlePage.clikEditArticleLink();
+  await viewArticlePage.clickEditArticleLink();
   await createArticlePage.assertArticleTitleVisible();
   await page.reload();
   for (const tag of article.tags) {

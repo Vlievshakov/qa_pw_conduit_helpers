@@ -26,12 +26,12 @@ test.beforeEach(async ({ page }) => {
 test('Edit the article description for the existing article', async ({
   page,
 }) => {
-  await viewArticlePage.clikEditArticleLink();
+  await viewArticlePage.clickEditArticleLink();
   await createArticlePage.assertArticleTitleVisible();
   await page.reload();
   await createArticlePage.fillDescriptionField(article.description + ' edited');
   await createArticlePage.clickUpdateArticleButton();
-  await viewArticlePage.clikEditArticleLink();
+  await viewArticlePage.clickEditArticleLink();
   await createArticlePage.assertArticleDescriptionIsUpdated(
     article.description + ' edited',
   );

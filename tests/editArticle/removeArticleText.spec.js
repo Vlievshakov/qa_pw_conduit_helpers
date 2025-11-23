@@ -6,7 +6,7 @@ import { generateNewArticleData } from '../../src/common/testData/generateNewArt
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import { signUpUser } from '../../src/ui/actions/auth/signUpUser';
 import { createNewArticle } from '../../src/ui/actions/article/createNewArticle';
-import { TEXT_CANNOT_BE_EMPTY } from '../../src/ui/constants/articleErrorMessages';
+import { BODY_CANNOT_BE_EMPTY } from '../../src/ui/constants/articleErrorMessages';
 
 let homePage;
 let createArticlePage;
@@ -25,10 +25,10 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Remove the article text for the existing article', async ({ page }) => {
-  await viewArticlePage.clikEditArticleLink();
+  await viewArticlePage.clickEditArticleLink();
   await createArticlePage.assertArticleTitleVisible();
   await page.reload();
   await createArticlePage.fillTextField('');
   await createArticlePage.clickUpdateArticleButton();
-  await createArticlePage.assertErrorMessageContainsText(TEXT_CANNOT_BE_EMPTY);
+  await createArticlePage.assertErrorMessageContainsText(BODY_CANNOT_BE_EMPTY);
 });
